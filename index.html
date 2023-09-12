@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>ACalc 2.0</title>
+</head>
+<body>
+   <div class="container" name="calc">
+       <div class="calculator">
+       <input type="text" id="outputi" name="txt" class="screen">
+       <button class="num" onclick="Clear()">C</button>
+       <button class="num" onclick="del()">DEL</button>
+       <button class="num" onclick="display('*')">*</button>
+       <button class="num" onclick="display('/')">/</button>
+       <button class="num" onclick="display('9')">9</button>
+       <button class="num" onclick="display('8')">8</button>
+       <button class="num" onclick="display('7')">7</button>
+       <button class="num" onclick="display('-')">-</button>
+       <button class="num" onclick="display('6')">6</button>
+       <button class="num" onclick="display('5')">5</button>
+       <button class="num" onclick="display('4')">4</button>
+       <button class="num" onclick="display('+')">+</button>
+       <button class="num" onclick="display('3')">3</button>
+       <button class="num" onclick="display('2')">2</button>
+       <button class="num" onclick="display('1')">1</button>
+       <button class="num" onclick="display('0')">0</button>
+       <button class="num" onclick="display('00')">00</button>
+       <button class="num" onclick="display('.')">.</button>
+       <button class="num equal" onclick="calculate()">=</button>
+   </div> 
+</div>
+   <script>
+       let output = document.getElementById('outputi');
+
+       function display(num){
+            output.value += num;
+       }
+
+       function calculate(){
+                try{
+                    output.value = eval(output.value);
+                }
+
+                catch(err){
+                    alert("Invalid")
+                }
+       }
+
+       function Clear(){
+            output.value = " ";
+       }
+
+       function del(){
+           output.value = output.value.slice(0, -1);
+       }
+   </script>
+</body>
+</html>
